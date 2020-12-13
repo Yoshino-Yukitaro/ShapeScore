@@ -1,0 +1,25 @@
+.wrap{
+    margin-bottom: 1.5rem;
+}
+.wrap img{
+  width: 100%;
+}
+.wrap video{
+    width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+  .float-right{
+    float: right;
+    width: 49.5%;
+  }
+  .float-left{
+    float:left;
+    width: 49.5%;
+  }
+  .wrap:after{
+    display: block;
+    clear: both;
+    content: "";
+  }
+}
