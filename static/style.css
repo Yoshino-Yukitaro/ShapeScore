@@ -1,25 +1,12 @@
-.wrap{
-    margin-bottom: 1.5rem;
-}
-.wrap img{
-  width: 100%;
-}
-.wrap video{
-    width: 100%;
-}
-
-@media screen and (min-width: 600px) {
-  .float-right{
-    float: right;
-    width: 49.5%;
-  }
-  .float-left{
-    float:left;
-    width: 49.5%;
-  }
-  .wrap:after{
-    display: block;
-    clear: both;
-    content: "";
-  }
+.content{
+  width:700px;
+  min-height:300px;
+  margin-right: auto;//コンテンツにだけ中央寄せを指定
+  margin-left : auto;
+  margin-top:1.5%; 
+  margin-bottom: 1.5%;
+  background-color :#ffffff;
+  font-size: 1.6em;
+  line-height: 1.5em;
+  border-radius: 15px;
 }

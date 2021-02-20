@@ -1,33 +1,52 @@
 <!DOCRTYPE>
-<html>
+<html lang="ja">
     <head>
         <meta charset="utf-8">
+        <title>ShapeScore</title>
         <meta name="viewport" content="width-device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-4ZPLezkTZTsojWFhpdFembdzFudphhoOzIunR1wH6g1WQDzCAiPvDyitaK67mp0+" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="static/style.css">
     </head>
-<body>
-    <div class="content">
-        <h1>ShapeScore</h1>
-        <div id="info">
-            <form method="POST" enctype="multipart/form-data" class="pure-form pure-form-stacked">
-                <fieldset>
-                    <legend>曲にしたい画像をアップロードしてください。</legend>
-                    <div class="fblock">
-                        <label for="upfile">変換したい画像ファイルを指定</label>
-                        <input type="file" name="upfile" id="upfile" accept="image/*">
-                    </div>
-                    <legend>曲の種類を選択してください。</legend>
-                    <div class="fblock">
-                        <label for="kind">曲の種類</label>
-                        <select name="kind" id="count">
-                            <option value="no">選択してください</option>
-                            <option value="ryukyu">琉球音楽風</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="pure-button pure-button-primary">変換</button>
-                </fieldset>
-            </form>
-        </div>
-    </div>
-</body>>
+	<body>
+		<header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">ShapeScore</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+    </header>
+    	<div class="content">
+        	<div id="info">
+            	<form method="POST" enctype="multipart/form-data">
+                	<fieldset>
+                    	<legend>曲にしたい画像をアップロードしてください。</legend>
+                    	<div class="form-group">
+                        	<input type="file" name="upfile" id="upfile" accept="image/*" class="form-control-file">
+                    	</div>
+                    	<legend>曲の種類を選択してください。</legend>
+                    	<div class="form-group">
+                        	<label for="kind">曲の種類</label>
+                        	<select name="kind" id="count" class="form-control" style="width:150;" required>
+                            	<option value="no" hidden>選択してください</option>
+                            	<option value="ryukyu">琉球音楽風</option>
+                        	</select>
+                    	</div>
+                    	<button type="submit" class="btn btn-outline-primary">変換</button>
+                	</fieldset>
+            	</form>
+        	</div>
+    	</div>
+    	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        	crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        	integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        	crossorigin="anonymous"></script>
+    	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
+        	integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        	crossorigin="anonymous"></script>
+	</body>
 </html>

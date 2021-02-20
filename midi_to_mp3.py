@@ -1,7 +1,7 @@
 from midi2audio import FluidSynth
 import os
 
-path = './files/sounds'
+path = 'static/files/sounds'
 
 def midi_to_mp3(inputFileName,outputFileName):
 	fs = FluidSynth(os.path.join(path,'font.sf2')) #サウンドフォントを指定

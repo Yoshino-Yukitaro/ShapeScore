@@ -7,7 +7,7 @@ import copy
 INDEX_TO_NOTENUMBER = 21 #0から87にこれを足すとmidiのノートナンバーになる
 
 def EdgeDetection(inputFileName,outputFileName):
-	path = './files/images'
+	path = 'static/files/images'
 	img = cv2.imread(os.path.join(path,inputFileName)) #画像読み込み
 	img2 = cv2.resize(img,dsize = (round((88 / img.shape[0]) * img.shape[1]),88))
 	gray_img = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY) #グレースケールに変換
@@ -15,7 +15,7 @@ def EdgeDetection(inputFileName,outputFileName):
 	cv2.imwrite(os.path.join(path,outputFileName),edge_img)
 	
 def OptToRyukyu(inputFileName,outputFileName):
-	path = './files/images'
+	path = 'static/files/images'
 	img = cv2.imread(os.path.join(path,inputFileName)) #画像読み込み
 	n = 0
 	while (12 * n + 11 < 88):       #画像の輝度値を琉球音階に適応
@@ -53,7 +53,7 @@ def OptToRyukyu(inputFileName,outputFileName):
 	cv2.imwrite(os.path.join(path,outputFileName),img)
 
 def ImageToScore(inputFileName,outputFileName):
-	path = './files/images'
+	path = 'static/files/images'
 	img = cv2.imread(os.path.join(path,inputFileName)) #画像読み込み
 	photo_score = pm.PrettyMIDI() #Pretty_MIDIオブジェクトの生成
 	js_harp = pm.Instrument(107) #琴(107)の楽譜インスタンスを生成
@@ -67,10 +67,10 @@ def ImageToScore(inputFileName,outputFileName):
 		photo_score.instruments.append(js_harp)
 		start_second = start_second + 0.5
 		end_second = end_second + 0.5
-	photo_score.write(os.path.join('./files/sounds',outputFileName))
+	photo_score.write(os.path.join('static/files/sounds',outputFileName))
 	
 def MakeImages(inputFileName,outputFileName):
-	path = './files/images'
+	path = 'static/files/images'
 	img = cv2.imread(os.path.join(path,inputFileName)) #画像読み込み
 	for i in range(img.shape[1]):
 		img2 = copy.copy(img)
@@ -82,13 +82,13 @@ def MakeImages(inputFileName,outputFileName):
 		cv2.imwrite(os.path.join(path,outputFileName + str(i) + '.png'),img2)
 		
 def IMGCols(FileName):
-	path = './files/images'
+	path = 'static/files/images'
 	img = cv2.imread(os.path.join(path,FileName)) #画像読み込み
 	return img.shape[1]
 	
 def Mp4Maker(inputFileName,outputFileName,cols):
 	CLIP_FPS = 2.01
-	path = './files/images'
+	path = 'static/files/images'
 	filepath = os.path.join(path,outputFileName)
 	w = cols
 	h = 88
